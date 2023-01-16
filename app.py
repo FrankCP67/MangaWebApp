@@ -6,7 +6,7 @@ import streamlit as st
 
 def load_images():
     st.subheader("Seleccione imagenes para procesar:")
-    list_uploaded_file = st.file_uploader(label="Input", type=['png', 'jpg', 'jpeg'] , label_visibility="collapsed", accept_multiple_files=True)
+    list_uploaded_file = st.file_uploader(label="", type=['png', 'jpg', 'jpeg'] , accept_multiple_files=True)
     with st.container():
         if list_uploaded_file is not None:
             list = []
@@ -34,7 +34,7 @@ def main():
         """
     st.markdown(hide_menu_style, unsafe_allow_html=True)
     st.title('Manga WebApp')
-    col1, col2 = st.columns(2, gap="large")
+    col1, col2 = st.columns(2)
     with col1:
         list_img = load_images()
     with col2:
